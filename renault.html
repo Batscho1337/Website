@@ -4,12 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renault R4 GTL</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: #ffa500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .image-column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .image-column img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-column img:hover {
+            transform: scale(1.02);
+        }
+
+        .text {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+
+        .text p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        video {
+            max-width: 100%;
+            border-radius: 12px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .text {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <a href="index.html">⬅ Zurück</a>
-
+    <a href="index.html" class="back-button">⬅ Zurück</a>
     <h1>Renault R4 GTL</h1>
     
     <div class="container">
@@ -23,12 +128,10 @@
             <p>BJ. 1977, 36 PS, 740Kg</p>
         </div>
     </div>
-
     <h2>Video</h2>
     <video controls width="600">
         <source src="videos/R4-4.mp4" type="video/mp4">
         Dein Browser unterstützt das Video nicht.
     </video>
-
 </body>
 </html>
