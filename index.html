@@ -90,6 +90,30 @@
         .music-box .platform-name {
             vertical-align: middle;
         }
+
+        /* Pulsierende Rahmen */
+        @keyframes pulseBorder {
+            0% { box-shadow: 0 0 0 0 rgba(30, 215, 96, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(30, 215, 96, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(30, 215, 96, 0); }
+        }
+
+        @keyframes pulseBorderOrange {
+            0% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 85, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0); }
+        }
+
+        .spotify-box {
+            border: 2px solid #1DB954;
+            animation: pulseBorder 2s infinite;
+        }
+
+        .soundcloud-box {
+            border: 2px solid #ff5500;
+            animation: pulseBorderOrange 2s infinite;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
@@ -131,20 +155,18 @@
         </a>
     </div>
 
-    <h2 class="section-title">Links</h2>
+    <h2 class="section-title">Meine Musik</h2>
     <div class="music-list">
-        <a href="https://open.spotify.com/user/zid3bky6ji5oq0767p80h6ife" target="_blank">
-            <div class="music-box">
-                <img src="/api/placeholder/300/200" alt="Spotify">
+        <a href="https://open.spotify.com/user/DEIN_USERNAME" target="_blank">
+            <div class="music-box spotify-box">
                 <h2>
                     <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.3.0/spotify.svg" alt="Spotify" class="platform-icon">
                     <span class="platform-name">Spotify</span>
                 </h2>
             </div>
         </a>
-        <a href="https://soundcloud.com/moistslippy-boy/likes" target="_blank">
-            <div class="music-box">
-                <img src="/api/placeholder/300/200" alt="SoundCloud">
+        <a href="https://soundcloud.com/DEIN_USERNAME" target="_blank">
+            <div class="music-box soundcloud-box">
                 <h2>
                     <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/11.3.0/soundcloud.svg" alt="SoundCloud" class="platform-icon">
                     <span class="platform-name">SoundCloud</span>
