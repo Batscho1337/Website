@@ -123,6 +123,49 @@
             border: 2px solid #F5C518;
             animation: pulseBorderYellow 2s infinite;
         }
+		        .works-button {
+            display: block;
+            width: fit-content;
+            margin: 4rem auto 2rem;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            color: white;
+            background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+            border: 2px solid #ffa500;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .works-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 165, 0, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .works-button:hover::before {
+            left: 100%;
+        }
+
+        .works-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+            background: linear-gradient(45deg, #2d2d2d, #1a1a1a);
+        }
 
         @media (max-width: 768px) {
             h1 {
@@ -137,6 +180,10 @@
             .car-box, .music-box {
                 width: 100%;
                 max-width: 300px;
+            }
+			.works-button {
+                font-size: 1.2rem;
+                padding: 0.8rem 1.6rem;
             }
         }
     </style>
@@ -192,5 +239,9 @@
             </div>
         </a>
     </div>
+	
+	 <a href="works.html" class="works-button">
+        Meine Werke
+    </a>
 </body>
 </html>

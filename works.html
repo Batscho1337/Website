@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Arbeiten | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            animation: burn 2s infinite alternate;
+            letter-spacing: 2px;
+        }
+
+        @keyframes burn {
+            0% {
+                text-shadow: 0 0 10px #ff4d4d,
+                           0 0 20px #ff9933,
+                           0 0 30px #ffff66;
+            }
+            100% {
+                text-shadow: 0 0 20px #ff4d4d,
+                           0 0 40px #ff9933,
+                           0 0 60px #ffff66;
+            }
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ffa500;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: white;
+            text-shadow: 0 0 10px #ffa500;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 2px solid #ffa500;
+            animation: pulseBorder 2s infinite;
+            cursor: pointer;
+            display: block; /* Für das <a> Element */
+        }
+
+        @keyframes pulseBorder {
+            0% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 165, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0); }
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        /* Preview-Bild im Grid */
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Stil für das Bild im neuen Tab */
+        .fullscreen-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 4rem auto 2rem;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            color: white;
+            background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+            border: 2px solid #ffa500;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .back-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 165, 0, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .back-button:hover::before {
+            left: 100%;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+            background: linear-gradient(45deg, #2d2d2d, #1a1a1a);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .back-button {
+                font-size: 1.2rem;
+                padding: 0.8rem 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Meine Arbeiten</h1>
+
+
+    <main class="gallery">
+        <a href="javascript:void(0)" onclick="openImage('/images/PosterNWM2.png')" class="gallery-item">
+            <img src="/images/PosterNWM2.png" alt="Poster NWM">
+        </a>
+
+        <a href="javascript:void(0)" onclick="openImage('/images/GumShotPoster.png')" class="gallery-item">
+            <img src="/images/GumShotPoster.png" alt="GumShot">
+        </a>
+
+        <a href="javascript:void(0)" onclick="openImage('/images/NWMLogoV6.png')" class="gallery-item">
+            <img src="/images/NWMLogoV6.png" alt="NWM Logo">
+        </a>
+
+        <a href="javascript:void(0)" onclick="openImage('/images/Kanye.png')" class="gallery-item">
+            <img src="/images/Kanye.png" alt="Ye">
+        </a>
+
+        <a href="javascript:void(0)" onclick="openImage('/images/Panorama.jpg')" class="gallery-item">
+            <img src="/images/Panorama.jpg" alt="Panorama">
+        </a>
+
+    </main>
+
+    <a href="index.html" class="back-button">Zurück zur Startseite</a>
+
+    <script>
+    function openImage(src) {
+        const win = window.open('', '_blank');
+        win.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Vollbild Ansicht</title>
+                <style>
+                    body {
+                        margin: 0;
+                        padding: 20px;
+                        background: #1a1a1a;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        min-height: 100vh;
+                    }
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+                </style>
+            </head>
+            <body>
+                <img src="${src}" alt="Vollbild Ansicht">
+            </body>
+            </html>
+        `);
+    }
+    </script>
+</body>
+</html>
